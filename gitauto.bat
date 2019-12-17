@@ -24,10 +24,10 @@ exit
 :pull
 echo.
 git pull origin master | find /C "Already up-to-date"
-if %ERRORLEVEL% EQU 0 goto pull_not_needed
+if %ERRORLEVEL% EQU 0 goto not_needed
 goto end
 
-:pull_not_needed
+:not_needed
 cls
 echo Nie ma potrzeby aktualizacji, wszystko aktualne
 goto end
@@ -38,5 +38,6 @@ git add *
 echo.
 set /P commit=Podaj commit tej aktualizacji: 
 git commit -m "%commit%"
-git push origin master
+git push origin master | find /C "Already up-to-date"
+if %ERRORLEVEL% EQU 0 goto not_needed
 goto end
