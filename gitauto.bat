@@ -36,14 +36,17 @@ goto end
 echo.
 echo Chcesz wysłać WSZYSTKIE pliki które mogą zostać zaktualizowane   (1)?
 echo czy tylko te oznaczone oznaczone już jako do dodania             (2)?
-choice /C 12 /N /M "[1/2]:"
-if %ERRORLEVEL% EQU 1 goto push
-if %ERRORLEVEL% EQU 2 goto push_only
+echo czy wysłać już zapisane commit'y?                                (3)?
+choice /C 12 /N /M "[1/2/3]:"
+if %ERRORLEVEL% EQU 1 goto push_add
+if %ERRORLEVEL% EQU 2 goto push_commit
+if %ERRORLEVEL% EQU 3 goto push_only
 goto end
 
-:push
+:push_add
 echo.
 git add *
+:push_commit
 echo.
 set /P commit=Podaj commit tej aktualizacji: 
 git commit -m "%commit%"
