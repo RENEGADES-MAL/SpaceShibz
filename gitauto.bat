@@ -7,8 +7,8 @@ title gitauto
 cls
 echo program uruchomiony z: %workingDirectory%
 echo.
-echo Chcesz pobra† najnowsze dane z repozytorium   (1)?
-echo Czy wysˆa† wszystkie swoje pliki do niego     (2)?
+echo Chcesz pobraÄ‡ najnowsze dane z repozytorium   (1)?
+echo Czy wysÅ‚aÄ‡ wszystkie swoje pliki do niego     (2)?
 choice /C 12 /N /M "[1/2]:"
 
 if %ERRORLEVEL% EQU 1 goto pull
@@ -16,7 +16,7 @@ if %ERRORLEVEL% EQU 2 goto push_choice
 
 :end
 echo.
-echo zakoäczono prac©
+echo zakoÅ„czono prace
 echo.
 pause
 exit
@@ -34,8 +34,8 @@ goto end
 
 :push_choice
 echo.
-echo Chcesz wysˆa† WSZYSTKIE pliki kt¢re mog¥ zosta† zaktualizowania   (1)?
-echo czy tylko te oznaczone oznaczone ju¾ jako do dodania              (2)?
+echo Chcesz wysÅ‚aÄ‡ WSZYSTKIE pliki ktÃ³re mogÄ… zostaÄ‡ zaktualizowane   (1)?
+echo czy tylko te oznaczone oznaczone juÅ¼ jako do dodania             (2)?
 choice /C 12 /N /M "[1/2]:"
 if %ERRORLEVEL% EQU 1 goto push
 if %ERRORLEVEL% EQU 2 goto push_only
