@@ -6,7 +6,8 @@ cd %workingDirectory%
 title gitauto
 cls
 echo program uruchomiony z: %workingDirectory%
-if "%1" EQU "pull" ( goto pull )
+set pulledFromCMD=0
+if "%1" EQU "pull" ( goto pulled_from_cmd )
 echo.
 echo Chcesz pobra† najnowsze dane z repozytorium   (1)?
 echo Czy wysˆa† wszystkie swoje pliki do niego     (2)?
@@ -19,8 +20,17 @@ if %ERRORLEVEL% EQU 2 goto push_choice
 echo.
 echo zakoäczono prace
 echo.
+if pulledFromCMD EQU 1 ( goto timed_exit )
 pause
 exit
+
+:timed_exit
+ping 127.0.0.1 -n 3 > nul
+exit
+
+:pulled_from_cmd
+set pulledFromCMD=1
+goto pull
 
 :pull
 echo.
