@@ -2,7 +2,7 @@
 @chcp 852
 set tmp=%~dp0
 set workingDirectory=%tmp:~0,-1%
-cd %workingDirectory%
+cd /D %workingDirectory%
 title gitauto
 cls
 echo program uruchomiony z: %workingDirectory%
@@ -49,7 +49,7 @@ echo.
 echo Chcesz wysˆa† WSZYSTKIE pliki kt¢re mog¥ zosta† zaktualizowane   (1)?
 echo czy tylko te oznaczone oznaczone ju¾ jako do dodania             (2)?
 echo czy wysˆa† ju¾ zapisane commit'y?                                (3)?
-choice /C 12 /N /M "[1/2/3]:"
+choice /C 123 /N /M "[1/2/3]:"
 if %ERRORLEVEL% EQU 1 goto push_add
 if %ERRORLEVEL% EQU 2 goto push_commit
 if %ERRORLEVEL% EQU 3 goto push_only
