@@ -66,6 +66,7 @@ git add %fileName%
 :push_commit
 echo.
 set /P commit=Podaj commit tej aktualizacji: 
+echo.
 git commit -m "%commit%"
 :push_only
 git push origin master
