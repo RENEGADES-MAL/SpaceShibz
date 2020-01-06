@@ -1,5 +1,4 @@
 @echo off
-cls
 set temp=%~dp0
 echo @echo off > "%tmp%\gitauto.bat"
 echo set workingDirectory=%temp:~0,-1% >> "%tmp%\gitauto.bat"
