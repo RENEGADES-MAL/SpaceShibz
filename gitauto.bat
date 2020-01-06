@@ -1,9 +1,7 @@
 @echo off
-@chcp 852
 cls
 set temp=%~dp0
 echo @echo off > "%tmp%\gitauto.bat"
-echo @chcp 852 >> "%tmp%\gitauto.bat"
 echo set workingDirectory=%temp:~0,-1% >> "%tmp%\gitauto.bat"
 echo cd /D %%workingDirectory%% >> "%tmp%\gitauto.bat"
 echo if "%%1" EQU "pull" ( goto pulled_from_cmd ) >> "%tmp%\gitauto.bat"
