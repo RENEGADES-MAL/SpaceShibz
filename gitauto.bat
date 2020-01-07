@@ -1,9 +1,15 @@
 @echo off
+cd>"%tmp%\giauto_tmp.txt"
+set /P originalDir=<"%tmp%\giauto_tmp.txt"
 set temp=%~dp0
 echo @echo off > "%tmp%\gitauto.bat"
 echo set workingDirectory=%temp:~0,-1% >> "%tmp%\gitauto.bat"
 echo cd /D %%workingDirectory%% >> "%tmp%\gitauto.bat"
+echo if "%%1" EQU "" ( goto no_arguments ) >> "%tmp%\gitauto.bat"
 echo if "%%1" EQU "pull" ( goto pulled_from_cmd ) >> "%tmp%\gitauto.bat"
+echo set workingDirectory=%%1>> "%tmp%\gitauto.bat"
+echo if "%%2" EQU "pull" ( goto pulled_from_cmd ) >> "%tmp%\gitauto.bat"
+echo :no_arguments >> "%tmp%\gitauto.bat"
 echo title gitauto >> "%tmp%\gitauto.bat"
 echo echo program uruchomiony z: %%workingDirectory%% >> "%tmp%\gitauto.bat"
 echo set fileName=*>> "%tmp%\gitauto.bat"
@@ -20,8 +26,7 @@ echo echo. >> "%tmp%\gitauto.bat"
 echo echo zakoäczono prace >> "%tmp%\gitauto.bat"
 echo echo. >> "%tmp%\gitauto.bat"
 echo pause >> "%tmp%\gitauto.bat"
-echo exit >> "%tmp%\gitauto.bat"
-echo. >> "%tmp%\gitauto.bat"
+echo goto true_end >> "%tmp%\gitauto.bat"
 echo :pull >> "%tmp%\gitauto.bat"
 echo echo. >> "%tmp%\gitauto.bat"
 echo echo pobieram najnowsze wersje plik¢w... >> "%tmp%\gitauto.bat"
@@ -70,4 +75,6 @@ echo echo. >> "%tmp%\gitauto.bat"
 echo echo pobieram najnowsze wersje plik¢w... >> "%tmp%\gitauto.bat"
 echo echo. >> "%tmp%\gitauto.bat"
 echo git pull origin master >> "%tmp%\gitauto.bat"
-"%tmp%\gitauto.bat" %1 %2 %3 %4 %5 %6 %7 %8 %9
+echo :true_end >> "%tmp%\gitauto.bat"
+"%tmp%\gitauto.bat" %1 %2
+cd /D %originalDir%
