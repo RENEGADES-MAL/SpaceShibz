@@ -2,12 +2,5 @@
 	"FileVersion": 3,
 	"EngineAssociation": "4.23",
 	"Category": "",
-	"Description": "",
-	"Modules": [
-		{
-			"Name": "SpaceShibz",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	]
+	"Description": ""
 }
