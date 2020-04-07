@@ -47,6 +47,7 @@ echo echo jeden plik                                         (2)? >> "%tmp%\gita
 echo echo tylko te oznaczone ju¾ jako do dodania             (3)? >> "%tmp%\gitauto.bat"
 echo echo ju¾ zapisane commit'y                              (4)? >> "%tmp%\gitauto.bat"
 echo choice /C 1234 /N /M "[1/2/3/4]:" >> "%tmp%\gitauto.bat"
+echo set fileName=*>> "%tmp%\gitauto.bat"
 echo if %%ERRORLEVEL%% EQU 1 goto push_add >> "%tmp%\gitauto.bat"
 echo if %%ERRORLEVEL%% EQU 2 goto push_file >> "%tmp%\gitauto.bat"
 echo if %%ERRORLEVEL%% EQU 3 goto push_commit >> "%tmp%\gitauto.bat"
