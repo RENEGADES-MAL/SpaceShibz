@@ -8,5 +8,8 @@
 			"Name": "MultiUserClient",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"WindowsNoEditor"
 	]
 }
