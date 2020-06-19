@@ -111,10 +111,6 @@
 			]
 		},
 		{
-			"Name": "Ansel",
-			"Enabled": true
-		},
-		{
 			"Name": "LocationServicesBPLibrary",
 			"Enabled": false
 		},
