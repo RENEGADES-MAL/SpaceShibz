@@ -46,7 +46,7 @@ SpaceShibz/Binaries/*
 
 # Builds
 SpaceShibz/Build/*
-!Builds/*
+!Builds/*.*
 
 # Don't ignore icon files in Build
 !SpaceShibz/Build/**/*.ico
