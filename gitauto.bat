@@ -1,4 +1,4 @@
-@chcp 852 > null
+@chcp 852
 @echo off
 cd>"%tmp%\giauto_tmp.txt"
 set /P originalDir=<"%tmp%\giauto_tmp.txt"
