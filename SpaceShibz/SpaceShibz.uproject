@@ -268,10 +268,6 @@
 			"Enabled": false
 		},
 		{
-			"Name": "UdpMessaging",
-			"Enabled": false
-		},
-		{
 			"Name": "UObjectPlugin",
 			"Enabled": false
 		},
@@ -293,6 +289,10 @@
 		},
 		{
 			"Name": "XCodeSourceCodeAccess",
+			"Enabled": false
+		},
+		{
+			"Name": "UdpMessaging",
 			"Enabled": false
 		}
 	],
